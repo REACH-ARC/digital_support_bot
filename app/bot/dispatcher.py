@@ -13,8 +13,8 @@ async def get_bot_dispatcher():
     dp.update.middleware(DbSessionMiddleware())
 
     # Routers
+    dp.include_router(commands.router) # Commands first!
     dp.include_router(customer.router)
-    dp.include_router(commands.router)
     dp.include_router(agent.router)
     
     return bot, dp

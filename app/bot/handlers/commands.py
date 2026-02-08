@@ -10,6 +10,16 @@ from app.models.user import UserType
 
 router = Router()
 
+@router.message(Command("start"), F.chat.type == "private")
+async def cmd_start(message: Message):
+    welcome_text = (
+        "👋 <b>Welcome to Digital Support!</b>\n\n"
+        "I am here to help you connecting with our support team.\n"
+        "Please send your message directly here, and an agent will respond shortly.\n\n"
+        "<i>You can send text, photos, documents, or voice messages.</i>"
+    )
+    await message.answer(welcome_text, parse_mode="HTML")
+
 @router.message(Command("list"), F.chat.id == settings.AGENT_GROUP_ID)
 async def cmd_list(message: Message, session: AsyncSession):
     conv_service = ConversationService(session)
