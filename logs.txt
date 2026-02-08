@@ -1,0 +1,17 @@
+﻿digital_support_bot  | Running database migrations...
+digital_support_bot  | INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+digital_support_bot  | INFO  [alembic.runtime.migration] Will assume transactional DDL.
+digital_support_bot  | Starting application...
+digital_support_bot  | INFO:     Started server process [1]
+digital_support_bot  | INFO:     Waiting for application startup.
+digital_support_bot  | ≡ƒÜÇ API Startup
+digital_support_bot  | INFO:     Application startup complete.
+digital_support_bot  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+digital_support_bot  | ≡ƒñû Starting Bot Polling...
+digital_support_bot  | Start polling
+digital_support_bot  | Run polling for bot @kb_dg_bot id=8412759028 - 'KB Digital Support'
+digital_support_bot  | Update id=617380971 is handled. Duration 1502 ms by bot id=8412759028
+digital_support_bot  | Update id=617380972 is handled. Duration 0 ms by bot id=8412759028
+digital_support_bot  | Update id=617380973 is handled. Duration 1 ms by bot id=8412759028
+digital_support_bot  | Update id=617380974 is handled. Duration 872 ms by bot id=8412759028
+digital_support_bot  | Update id=617380975 is not handled. Duration 0 ms by bot id=8412759028
