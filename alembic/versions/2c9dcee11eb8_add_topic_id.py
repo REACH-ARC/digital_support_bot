@@ -36,7 +36,14 @@ def upgrade() -> None:
                existing_type=postgresql.TIMESTAMP(),
                nullable=False,
                existing_server_default=sa.text('now()'))
-    op.add_column('conversations', sa.Column('topic_id', sa.BigInteger(), nullable=True))
+    
+    # Check if column exists before adding to avoid duplicate error
+    conn = op.get_bind()
+    inspector = sa.inspect(conn)
+    columns = [c['name'] for c in inspector.get_columns('conversations')]
+    if 'topic_id' not in columns:
+        op.add_column('conversations', sa.Column('topic_id', sa.BigInteger(), nullable=True))
+        
     op.alter_column('conversations', 'status',
                existing_type=sa.VARCHAR(length=20),
                nullable=False,
